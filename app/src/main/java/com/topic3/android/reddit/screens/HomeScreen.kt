@@ -142,6 +142,26 @@ private fun TrendingTopics(
                 )
             }
             Spacer(modifier = Modifier.height(8.dp))
+            LazyRow(
+                contentPadding = PaddingValues(
+                    start = 16.dp,
+                    top = 8.dp,
+                    end = 16.dp
+                ),
+                content = {
+                    itemsIndexed(
+                        items = trendingTopics,
+                        itemContent = { index,
+                                        trendingModel ->
+                            TrendingTopic(trendingModel)
+                            if (index != trendingTopics.lastIndex) {
+                                Spacer(modifier = Modifier.width(8.dp))
+                            }
+
+                        }
+                    )
+                }
+            )
         }
     }
 }
