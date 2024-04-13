@@ -82,6 +82,7 @@ fun HomeScreen(viewModel: MainViewModel) {
             Timer().schedule(3000) { isToastVisible = false }
         }
     }
+    val homeScreenItems = mapHomeScreenItems(posts)
     Box(modifier = Modifier.fillMaxSize()) {
         LazyColumn(
             modifier = Modifier.background(
